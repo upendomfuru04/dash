@@ -12,84 +12,183 @@
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" rel="stylesheet">
 </head>
 <style type="text/css">
-	@import url('https://fonts.googleapis.com/css?family=Roboto');
 
-body{
-	font-family: 'Roboto', sans-serif;
-}
-* {
-	margin: 0;
-	padding: 0;
-}
 
-#navbar-animmenu {
-	background: #fe6600;
-	float: left;
-	overflow: hidden;
-	position: relative;
-	padding: 10px 0px;
-  width: 100%;
+	@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,700,800);
+
+*,html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,label,fieldset,input,p,blockquote,th,td {
+    margin: 0;
+    padding: 0;
 }
 
-#navbar-animmenu ul{
-	padding: 0px;
-	margin: 0px;
-  
-}
-
-
-#navbar-animmenu li {
-	list-style-type: none;
-	float: left;
-}
-
-#navbar-animmenu ul li a{
-	color: #ffffff;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 45px;
+article,aside,figure,footer,header,hgroup,nav,section {
     display: block;
-    padding: 0px 20px;
-    transition-duration:0.6s;
-	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    position: relative;
 }
 
-.ban{
-    position: relative;
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: #BA0707;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #BA0707;
+}
+
+body {
+    background: #e5e5e5;
+    color: #374147;
+    font: 14px "Open Sans",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1;
     width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-content: center;
-    align-items: center;
-    background: url(world.jpg);
-    background-size: cover;
-
-  }
-
-  .container {
-  max-width: 700px;
-  width: 80%;
-  margin: 50px auto;
-  padding: 20px
-  } 
-
-  .bio {
-  padding: 2rem;
-  border-radius: 6px;
-  box-shadow: 0px 2px 15px 2px #8b8eaf;
-  background-color: #fe6600;
-  color: white;
 }
 
-
-
-.bio h4 {
-  line-height: 1.7rem;
-  padding: 1.3rem 0;
-  font-size: 20px;
-  font-weight:bolder;
+nav {
+    display: block;
+    background: #fe6600;
 }
+
+.menu {
+    display: block;
+}
+
+.menu li {
+    display: inline-block;
+    position: relative;
+    z-index: 100;
+}
+
+.menu li:first-child {
+    margin-left: 0;
+}
+
+.menu li a {
+    font-weight: 600;
+    text-decoration: none;
+    padding: 20px 15px;
+    display: block;
+    color: #fff;
+    font-size: 15px;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.menu li a:hover,.menu li:hover>a {
+    color: #fe6600;
+    background: #fff;
+}
+
+.menu ul {
+    visibility: hidden;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    width: 170px;
+    position: absolute;
+    left: 0px;
+    background: #fff;
+    z-index: 99;
+    transform: translate(0,20px);
+    transition: all 0.2s ease-out;
+}
+
+.menu ul:after {
+    bottom: 100%;
+    left: 20%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #fff;
+    border-width: 6px;
+    margin-left: -6px;
+}
+
+.menu ul li {
+    display: block;
+    float: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li a {
+    font-size: 13px;
+    font-weight: normal;
+    display: block;
+    color: #fe6600;
+    background: #fff;
+}
+
+.menu ul li a:hover,.menu ul li:hover>a {
+    background: #9ca3da;
+    color: #fff;
+}
+
+.menu li:hover>ul {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+.menu ul ul {
+    left: 169px;
+    top: 0px;
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(20px,20px);
+    transition: all 0.2s ease-out;
+}
+
+.menu ul ul:after {
+    left: -6px;
+    top: 10%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(255, 255, 255, 0);
+    border-right-color: #fff;
+    border-width: 6px;
+    margin-top: -6px;
+}
+
+.menu li>ul ul:hover {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+.responsive-menu {
+    display: none;
+    width: 100%;
+    padding: 20px 15px;
+    background: #374147;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.responsive-menu:hover {
+    background: #ffffff;
+    color: #fe6600;
+    text-decoration: none;
+}
+
 
 
 
@@ -97,68 +196,116 @@ body{
 </style>
 
 <body>
-<div id="navbar-animmenu">
-        <ul class="show-dropdown main-navbar">
-            <li>
-                <a href="#">Dashboard</a>
-            </li>
-            <li>
-                <a href="#">Tutors</a>
-            </li>
-            <li>
-                <a href="#">Students</a>
-            </li>
-            <li>
-                <a href="#">Appointmets</a>
-            </li>
-             <li>
-                <a href="#">Filters</a>
-            </li>
-            <li>
-                <a href="#">Classes</a>
-            </li>
-            <li>
-                <a href="#">Coupons</a>
-            </li>
-             <li>
-                <a href="#">Payment</a>
-            </li>
-            <li>
-                <a href="#">Earning starts</a>
-            </li>
-            <li>
-                <a href="#">Config</a>
-            </li>
-            <li>
-                <a href="#">Language</a>
-            </li>
-             <li>
-                <a href="#">Profile</a>
-            </li>
-            
-            
-        </ul>
-    </div>
- <section class="ban">
-    <div class="container">
-        <div class="bio">
-        <h4 class="bio-text">Total student registered : 35
-        </h4>
-        <h4 class="bio-text">Total tutors : 60
-        </h4>
-        <h4 class="bio-text">Total tutor pending approved : 26
-        </h4>
-        <h4 class="bio-text">Payout request pending : Tzs 500
-        </h4>
-        <h4 class="bio-text">Total Group Classes : 40
-        </h4>
-        <h4 class="bio-text">Total revenue : Tzs 2500
-        </h4>
-      </div>
-    </div>
-</section>
-
-
-
+<nav class="hs full">
+<a id="resp-menu" class="responsive-menu" href="#"><i class="fa fa-reorder"></i> Menu</a>    
+   <ul class="menu">
+   <li><a class="homer" href="#"><i class="fa fa-"></i> Dashboard</a>
+   <ul class="sub-menu">
+   <li><a href="#">Analytics</a></li> 
+   </ul>
+   </li>
+  <li><a  href="#"><i class="fa fa-"></i> Tutors</a>
+  <ul class="sub-menu">
+   <li><a href="#">List Tutors</a></li>
+   <li><a href="#">Create New</a></li>
+   </ul>
+  </li>
+  <li><a  href="#"><i class="fa fa-"></i> Students</a>
+  <ul class="sub-menu">
+   <li><a href="#">List Students</a></li>
+   <li><a href="#">Create New</a></li>
+   </ul>
+  </li>
+  <li><a  href="#"><i class="fa fa-"></i> Appointments</a>
+  <ul class="sub-menu">
+   <li><a href="#">List Appointment</a></li>
+   </ul>
+  </li>
+  <li><a  href="#"><i class="fa fa-"></i> Filters</a>
+  <ul class="sub-menu">
+   <li><a href="#">Grades</a></li>
+   <li><a href="#">Categories</a></li>
+   <li><a href="#">Subject</a></li>
+   <li><a href="#">Topics</a></li>
+   </ul>
+  </li>
+  <li><a  href="#"><i class="fa fa-"></i> Classes</a>
+  <ul class="sub-menu">
+   <li><a href="#">Group Classes</a></li>
+   <li><a href="#">Cources</a></li>
+   </ul>
+  </li>
+  <li><a  href="#"><i class="fa fa-"></i> Coupons</a>
+  <ul class="sub-menu">
+   <li><a href="#">List coupons</a></li>
+   <li><a href="#">Create New</a></li>
+   </ul>
+  </li>
+  <li><a  href="#"><i class="fa fa-"></i> Pages</a>
+  <ul class="sub-menu">
+   <li><a href="#">List Pages</a></li>
+   <li><a href="#">Create Pages</a></li>
+   </ul>
+  </li>
+  <li><a  href="#"><i class="fa fa-"></i> Payment</a>
+  <ul class="sub-menu">
+   <li><a href="#">Refund Request</a></li>
+   <li><a href="#">Payment Manager</a></li>
+   <li><a href="#">payout Request</a></li>
+   </ul>
+  </li>
+  <li><a  href="#"><i class="fa fa-"></i> Earning Starts</a>
+  <ul class="sub-menu">
+   <li><a href="#">Earning Starts</a></li>
+   </ul>
+  </li>
+  <li><a  href="#"><i class="fa fa-"></i> Config</a>
+  <ul class="sub-menu">
+   <li><a href="#">Config</a></li>
+   <li><a href="#">Testimonal</a></li>
+   </ul>
+  </li>
+  <li><a  href="#"><i class="fa fa-"></i> Language</a>
+  <ul class="sub-menu">
+   <li><a href="#">Languages</a></li>
+   <li><a href="#">Text</a></li>
+   </ul>
+  </li>
+  <li><a  href="#"><i class="fa fa-"></i> My Peofile</a></li>
+  <ul class="sub-menu">
+   <li><a href="#">My Peofile</a></li>
+   <li><a href="#">Logout</a></li>
+   </ul>
+  </ul>
+  </nav>
 </body>
+
+<script>
+	$(document).ready(function(){ 
+	var touch 	= $('#resp-menu');
+	var menu 	= $('.menu');
+ 
+	$(touch).on('click', function(e) {
+		e.preventDefault();
+		menu.slideToggle();
+	});
+	
+	$(window).resize(function(){
+		var w = $(window).width();
+		if(w > 767 && menu.is(':hidden')) {
+			menu.removeAttr('style');
+		}
+	});
+	
+});
+
+	var root = document.documentElement;
+const lists = document.querySelectorAll('.hs'); 
+
+lists.forEach(el => {
+  const listItems = el.querySelectorAll('li');
+  const n = el.children.length;
+  el.style.setProperty('--total', n);
+});
+</script>
 </html>
