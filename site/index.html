@@ -190,24 +190,59 @@ nav {
 }
 
 
+.ban{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    background: url(world.jpg);
+    background-size: cover;
+
+  }
+
+  .container {
+  max-width: 800px;
+  width: 80%;
+  margin: 50px auto;
+  padding: 20px
+  } 
+
+  .bio {
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0px 2px 15px 2px #8b8eaf;
+  background-color: #fe6600;
+  color: white;
+}
+
+
+.bio h4 {
+  line-height: 5rem;
+  padding: 0.6rem 0;
+  font-size: 26px;
+}
 
 
 
+
+  
 </style>
 
 <body>
-<nav class="hs full">
+<nav>
 <a id="resp-menu" class="responsive-menu" href="#"><i class="fa fa-reorder"></i> Menu</a>    
    <ul class="menu">
    <li><a class="homer" href="#"><i class="fa fa-"></i> Dashboard</a>
    <ul class="sub-menu">
-   <li><a href="#">Analytics</a></li> 
+   <li><a href="index.html">Analytics</a></li> 
    </ul>
    </li>
   <li><a  href="#"><i class="fa fa-"></i> Tutors</a>
   <ul class="sub-menu">
-   <li><a href="#">List Tutors</a></li>
-   <li><a href="#">Create New</a></li>
+   <li><a href="listtutor.html">List Tutors</a></li>
+   <li><a href="create.html">Create New</a></li>
    </ul>
   </li>
   <li><a  href="#"><i class="fa fa-"></i> Students</a>
@@ -278,6 +313,21 @@ nav {
    </ul>
   </ul>
   </nav>
+
+  <section class="ban">
+    <div class="container">
+        <div class="bio">
+        <h4 class="bio-text">Total student registered : 35 </h4>
+        <h4 class="bio-text">Total tutor : 60  </h4>
+        <h4 class="bio-text">Total tutor pending approved : 26 </h4>
+        <h4 class="bio-text">Payout request pending  : Tzs 500 </h4>
+        <h4 class="bio-text">Total Group Classes : 40</h4>
+        <h4 class="bio-text">Total revenue : tsh 2500 </h4>
+
+      </div>
+    </div>
+</section>
+
 </body>
 
 <script>
@@ -297,15 +347,6 @@ nav {
 		}
 	});
 	
-});
-
-	var root = document.documentElement;
-const lists = document.querySelectorAll('.hs'); 
-
-lists.forEach(el => {
-  const listItems = el.querySelectorAll('li');
-  const n = el.children.length;
-  el.style.setProperty('--total', n);
 });
 </script>
 </html>
