@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>global</title>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></head>
+<style>
+body {
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+.dashed-gradient{
+  border-radius: 5px;
+  background-color: transparent;
+  color: black;
+  text-align: center;
+  height: 150px;
+  width: 250px;
+  padding: 10px;
+  background-image: linear-gradient(to right, #fe6600 60%, transparent 50%), linear-gradient(to right, #fe6600 60%, transparent 60%), linear-gradient(to bottom, #fe6600 60%, transparent 60%), linear-gradient(to bottom, #fe6600 60%, transparent 60%);
+  background-position: left top, left bottom, left top, right top;
+  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+  background-size: 15px 2px, 15px 2px, 2px 15px, 2px 15px;
+}
+
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+</style>
+</head>
+<body>
+
+
+<div class="row">
+
+ <div class="col-25">
+    <div class="container">
+      <br>
+      <br>
+      <br>
+      <h4>Choose avater (Expected size: 320x421 pixels, Maximum size: 1024 mb)</h4>
+        <div class='dashed-gradient'>Drop or click to select file</div>
+
+        <hr>
+      <p>Email address</p>
+      <p>Phone <span class="price">N/A</span></p>
+      <p>Address<span class="price">N/A</span></p>
+      <hr>
+      <p>Created/joined at</p>
+    </div>
+  </div>
+  <div class="col-75">
+    <div class="container">
+      <form action="/action_page.php">
+      
+        <div class="row">
+        
+          <div class="col-50">
+            <label for="fname"> Full Name(*)</label>
+            <input type="text" id="fname" name="firstname" placeholder="Enter name">
+            <label for="country">Timezone </label>
+            <input type="text" id="state" name="email" placeholder="America/New_York">
+            <label for="adr">Phone number(*)</label>
+            <input type="text" id="number" name="address" placeholder="E.g:0123456789">
+              <label for="country">State </label>
+            <input type="text" id="state" name="email" placeholder="Enter State">
+            <label for="adr">Address(*)</label>
+            <input type="text" id="adr" name="address" placeholder="Enter address">
+              <label for="country">Language(*) </label>
+            <input type="text" id="lang" placeholder="English">
+            <label for="adr">commision rate</label>
+            <input type="text" id="number" name="address" placeholder="Enter commision rate">
+</div>
+           
+
+          <div class="col-50">
+           <label for="fname"> User Name(*)</label>
+            <input type="text" id="fname" name="firstname" placeholder="admin@livelearn.info">
+            <label for="email"> Email</label>
+            <input type="text" id="email" name="email" placeholder="user@example.com">
+            <label for="expmonth">Country (*)</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="Tanzania">
+              <label for="country">City </label>
+            <input type="text" id="email" name="email" placeholder="Enter City">
+            <label for="adr">Zip code(*)</label>
+            <input type="text" id="adr" name="address" placeholder="Enter Zip code">
+              <label for="country">ID Youtube (Introduction video) </label>
+            <input type="text" id="email" name="email" placeholder="Enter id youtube">
+            <label for="adr">Password</label>
+            <input type="text" id="Password" name="address" placeholder="">
+
+          </div>
+          
+        </div>
+      </form>
+    </div>
+  </div>
+ 
+</div>
+
+</body>
+</html>
