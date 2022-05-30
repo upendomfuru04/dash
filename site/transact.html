@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>global</title>
@@ -202,13 +201,22 @@ td:last-child {text-align:center;}
 
 
 input[type=text] {
-  width: 70%;
+  width: 100%;
   margin-bottom: 10px;
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
 
+select { margin-bottom:15px; }
+#id_contact_options {
+   width: 100px;
+   padding: 5px;
+   font-size: 14px;
+  border: 1px solid #ccc;
+   height: 34px;
+     margin-bottom: 10px;
+}
 
 .betn {
   appearance: none;
@@ -216,7 +224,7 @@ input[type=text] {
   font-family: sans-serif;
   cursor: pointer;
   padding: 12px;
-  min-width: 80px;
+  min-width: 100px;
   border: 0px;
     -webkit-transition: background-color 100ms linear;
     -ms-transition: background-color 100ms linear;
@@ -239,11 +247,6 @@ input[type=text] {
 
 .betn-danger:hover {
   background: #fe6600;
-  color: #ffffff;
-}
-
-.btn-purple{
-  background-color: purple;
   color: #ffffff;
 }
 
@@ -334,177 +337,170 @@ input[type=text] {
   <br>
   <br>
   <div class="container">
+   <h2>Transaction manager</h2>
   <div class="row">
     <div class="col-xs-12">
-<table summary="This table shows how to create responsive tables using Datatables' extended functionality" class="table table-bordered table-hover dt-responsive" cellspacing="0" width="100%">
-	<thead>
+
+  <table class="table table-striped">
+  <caption class="text-center">Total Transactio: 11</caption>
+    <thead>
 		<tr>
-			<th>Name</th>
-			<th>Ordering</th>
-			<th>Active</th>
-			<th>Created at</th>
-			<th></th>
-		</tr>
+      <th>Tutor name</th>
+      <th>User name</th>
+      <th>Group Class</th>
+      <th>Subject</th>
+      <th>Course</th>
+      <th>Type</th>
+      <th>Enroll <br>type</th>
+      <th>Code</th>
+      <th>Price</th>
+      <th>commission</th>
+      <th>Balance</th>
+      <th>Created at</th>
+      <th>Status</th>
+    </tr>
 	</thead>
 	<tbody>
-		<tr>
-			<td>
-            <input type="text" id="fname" name="firstname" placeholder="Enter name">
-            <button class="betn betn-danger betn-round-2">Filter</button></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-		</tr>
+    
 		
-	       <tr>
-      <td>Juz'Amma - Juz'Amma</td>    
-       <td>2</td>
-      <td><button type="button" class="btn-xs  btn btn-success">
-          <span>Yes</span>
+		<tr> 
+      <td>Jonas Hump</td>
+      <td>Shane Mullis</td>
+      <td>-</td>
+      <td>-</td>
+      <td>Complete Web <br>
+        Designer in 2021: <br>Become a <br>Designer in 2021!<br>  Web Design,<br> User Interface<br> Experience,<br> HTML, and CSS</td>
+      <td><button type="button" class="btn-xs btn btn-success">
+          <span>Booking</span>
         </button></td>
-      <td>Aug 12,2021</td>
-     <td>
-        <button type="button" class="btn btn-primary btn-xs dt-edit" style="margin-right:16px;">
-          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+        <td><button type="button" class="btn-xs btn btn-success">
+          <span>Course</span>
+        </button></td>
+         <td>9CMDH</td>
+      <td>$22</td>
+      <td>$2.2</td>
+      <td>$19.8</td>
+      <td>06:30 AM 3/1/22</td>
+      <td>
+        <button type="button" class="btn btn-success btn-xs">
+          <span>completedt</span>
         </button>
-        <button type="button" class="btn btn-success btn-xs ">
-          <span>Activated</span>
+        <button type="button" class="btn btn-primary btn-xs dt-edit">
+          <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+        </button>
+        
       </td>
     </tr>
-		    <tr>
-      <td>Juz'Amma - Juz'Amma</td>    
-       <td>2</td>
-      <td><button type="button" class="btn-xs  btn btn-success">
-          <span>Yes</span>
+  <tr> 
+      <td>Jonas Hump</td>
+      <td>Shane Mullis</td>
+      <td>-</td>
+      <td>-</td>
+      <td>Complete Web <br>
+        Designer in 2021: <br>Become a <br>Designer in 2021!<br>  Web Design,<br> User Interface<br> Experience,<br> HTML, and CSS</td>
+      <td><button type="button" class="btn-xs btn btn-success">
+          <span>Booking</span>
         </button></td>
-      <td>Aug 12,2021</td>
-     <td>
-        <button type="button" class="btn btn-primary btn-xs dt-edit" style="margin-right:16px;">
-          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+        <td><button type="button" class="btn-xs btn btn-success">
+          <span>Course</span>
+        </button></td>
+         <td>9CMDH</td>
+      <td>$22</td>
+      <td>$2.2</td>
+      <td>$19.8</td>
+      <td>06:30 AM 3/1/22</td>
+      <td>
+        <button type="button" class="btn btn-success btn-xs">
+          <span>completedt</span>
         </button>
-        <button type="button" class="btn btn-success btn-xs ">
-          <span>Activated</span>
+        <button type="button" class="btn btn-primary btn-xs dt-edit">
+          <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+        </button>
+        
       </td>
     </tr>
-          <tr>
-      <td>Juz'Amma - Juz'Amma</td>    
-       <td>2</td>
-      <td><button type="button" class="btn-xs  btn btn-success">
-          <span>Yes</span>
+    <tr> 
+      <td>Jonas Hump</td>
+      <td>Shane Mullis</td>
+      <td>-</td>
+      <td>-</td>
+      <td>Complete Web <br>
+        Designer in 2021: <br>Become a <br>Designer in 2021!<br>  Web Design,<br> User Interface<br> Experience,<br> HTML, and CSS</td>
+      <td><button type="button" class="btn-xs btn btn-success">
+          <span>Booking</span>
         </button></td>
-      <td>Aug 12,2021</td>
-     <td>
-        <button type="button" class="btn btn-primary btn-xs dt-edit" style="margin-right:16px;">
-          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+        <td><button type="button" class="btn-xs btn btn-success">
+          <span>Course</span>
+        </button></td>
+         <td>9CMDH</td>
+      <td>$22</td>
+      <td>$2.2</td>
+      <td>$19.8</td>
+      <td>06:30 AM 3/1/22</td>
+      <td>
+        <button type="button" class="btn btn-success btn-xs">
+          <span>completedt</span>
         </button>
-        <button type="button" class="btn btn-success btn-xs ">
-          <span>Activated</span>
+        <button type="button" class="btn btn-primary btn-xs dt-edit">
+          <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+        </button>
+        
       </td>
     </tr>
-        <tr>
-      <td>Juz'Amma - Juz'Amma</td>    
-       <td>2</td>
-      <td><button type="button" class="btn-xs  btn btn-success">
-          <span>Yes</span>
+    <tr> 
+      <td>Jonas Hump</td>
+      <td>Shane Mullis</td>
+      <td>-</td>
+      <td>-</td>
+      <td>Complete Web <br>
+        Designer in 2021: <br>Become a <br>Designer in 2021!<br>  Web Design,<br> User Interface<br> Experience,<br> HTML, and CSS</td>
+      <td><button type="button" class="btn-xs btn btn-success">
+          <span>Booking</span>
         </button></td>
-      <td>Aug 12,2021</td>
-     <td>
-        <button type="button" class="btn btn-primary btn-xs dt-edit" style="margin-right:16px;">
-          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+        <td><button type="button" class="btn-xs btn btn-success">
+          <span>Course</span>
+        </button></td>
+         <td>9CMDH</td>
+      <td>$22</td>
+      <td>$2.2</td>
+      <td>$19.8</td>
+      <td>06:30 AM 3/1/22</td>
+      <td>
+        <button type="button" class="btn btn-success btn-xs">
+          <span>completedt</span>
         </button>
-        <button type="button" class="btn btn-success btn-xs ">
-          <span>Activated</span>
+        <button type="button" class="btn btn-primary btn-xs dt-edit">
+          <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+        </button>
+        
       </td>
     </tr>
-       <tr>
-      <td>Juz'Amma - Juz'Amma</td>    
-       <td>2</td>
-      <td><button type="button" class="btn-xs  btn btn-success">
-          <span>Yes</span>
+    <tr> 
+      <td>Jonas Hump</td>
+      <td>Shane Mullis</td>
+      <td>-</td>
+      <td>-</td>
+      <td>Complete Web <br>
+        Designer in 2021: <br>Become a <br>Designer in 2021!<br>  Web Design,<br> User Interface<br> Experience,<br> HTML, and CSS</td>
+      <td><button type="button" class="btn-xs btn btn-success">
+          <span>Booking</span>
         </button></td>
-      <td>Aug 12,2021</td>
-     <td>
-        <button type="button" class="btn btn-primary btn-xs dt-edit" style="margin-right:16px;">
-          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-        </button>
-        <button type="button" class="btn btn-success btn-xs ">
-          <span>Activated</span>
-      </td>
-    </tr>
-        <tr>
-      <td>Juz'Amma - Juz'Amma</td>    
-       <td>2</td>
-      <td><button type="button" class="btn-xs  btn btn-success">
-          <span>Yes</span>
+        <td><button type="button" class="btn-xs btn btn-success">
+          <span>Course</span>
         </button></td>
-      <td>Aug 12,2021</td>
-     <td>
-        <button type="button" class="btn btn-primary btn-xs dt-edit" style="margin-right:16px;">
-          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+         <td>9CMDH</td>
+      <td>$22</td>
+      <td>$2.2</td>
+      <td>$19.8</td>
+      <td>06:30 AM 3/1/22</td>
+      <td>
+        <button type="button" class="btn btn-success btn-xs">
+          <span>completedt</span>
         </button>
-        <button type="button" class="btn btn-success btn-xs ">
-          <span>Activated</span>
-      </td>
-    </tr>
-       <tr>
-      <td>Juz'Amma - Juz'Amma</td>    
-       <td>2</td>
-      <td><button type="button" class="btn-xs  btn btn-success">
-          <span>Yes</span>
-        </button></td>
-      <td>Aug 12,2021</td>
-     <td>
-        <button type="button" class="btn btn-primary btn-xs dt-edit" style="margin-right:16px;">
-          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+        <button type="button" class="btn btn-primary btn-xs dt-edit">
+          <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
         </button>
-        <button type="button" class="btn btn-success btn-xs ">
-          <span>Activated</span>
-      </td>
-    </tr>
-        <tr>
-      <td>Juz'Amma - Juz'Amma</td>    
-       <td>2</td>
-      <td><button type="button" class="btn-xs  btn btn-success">
-          <span>Yes</span>
-        </button></td>
-      <td>Aug 12,2021</td>
-     <td>
-        <button type="button" class="btn btn-primary btn-xs dt-edit" style="margin-right:16px;">
-          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-        </button>
-        <button type="button" class="btn btn-success btn-xs ">
-          <span>Activated</span>
-      </td>
-    </tr>
-       <tr>
-      <td>Juz'Amma - Juz'Amma</td>    
-       <td>2</td>
-      <td><button type="button" class="btn-xs  btn btn-success">
-          <span>Yes</span>
-        </button></td>
-      <td>Aug 12,2021</td>
-     <td>
-        <button type="button" class="btn btn-primary btn-xs dt-edit" style="margin-right:16px;">
-          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-        </button>
-        <button type="button" class="btn btn-success btn-xs ">
-          <span>Activated</span>
-      </td>
-    </tr>
-        <tr>
-      <td>Juz'Amma - Juz'Amma</td>    
-       <td>2</td>
-      <td><button type="button" class="btn-xs  btn btn-success">
-          <span>Yes</span>
-        </button></td>
-      <td>Aug 12,2021</td>
-     <td>
-        <button type="button" class="btn btn-primary btn-xs dt-edit" style="margin-right:16px;">
-          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-        </button>
-        <button type="button" class="btn btn-success btn-xs ">
-          <span>Activated</span>
+        
       </td>
     </tr>
 	</tbody>
