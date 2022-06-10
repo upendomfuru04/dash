@@ -1,0 +1,492 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>global</title>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Lato|Nanum+Gothic:700|Raleway&display=swap" rel="stylesheet">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.16/datatables.min.css"/>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.16/datatables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css"/>
+</head>
+<style type="text/css">
+
+
+	@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,700,800);
+
+*,html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,label,fieldset,input,p,blockquote,th,td {
+    margin: 0;
+    padding: 0;
+}
+
+article,aside,figure,footer,header,hgroup,nav,section {
+    display: block;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: #BA0707;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #BA0707;
+}
+
+body {
+    font: 14px "Open Sans",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1;
+    width: 100%;
+}
+
+nav {
+    display: block;
+    background: #fe6600;
+}
+
+.menu {
+    display: block;
+}
+
+.menu li {
+    display: inline-block;
+    position: relative;
+    z-index: 100;
+}
+
+.menu li:first-child {
+    margin-left: 0;
+}
+
+.menu li a {
+    font-weight: 600;
+    text-decoration: none;
+    padding: 20px 15px;
+    display: block;
+    color: #fff;
+    font-size: 15px;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.menu li a:hover,.menu li:hover>a {
+    color: #fe6600;
+    background: #fff;
+}
+
+.menu ul {
+    visibility: hidden;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    width: 170px;
+    position: absolute;
+    left: 0px;
+    background: #fff;
+    z-index: 99;
+    transform: translate(0,20px);
+    transition: all 0.2s ease-out;
+}
+
+.menu ul:after {
+    bottom: 100%;
+    left: 20%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #fff;
+    border-width: 6px;
+    margin-left: -6px;
+}
+
+.menu ul li {
+    display: block;
+    float: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li a {
+    font-size: 13px;
+    font-weight: normal;
+    display: block;
+    color: #fe6600;
+    background: #fff;
+}
+
+.menu ul li a:hover,.menu ul li:hover>a {
+    background: #9ca3da;
+    color: #fff;
+}
+
+.menu li:hover>ul {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+.menu ul ul {
+    left: 169px;
+    top: 0px;
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(20px,20px);
+    transition: all 0.2s ease-out;
+}
+
+.menu ul ul:after {
+    left: -6px;
+    top: 10%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(255, 255, 255, 0);
+    border-right-color: #fff;
+    border-width: 6px;
+    margin-top: -6px;
+}
+
+.menu li>ul ul:hover {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+.responsive-menu {
+    display: none;
+    width: 100%;
+    padding: 20px 15px;
+    background: #374147;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.responsive-menu:hover {
+    background: #ffffff;
+    color: #fe6600;
+    text-decoration: none;
+}
+
+table.dataTable th,
+table.dataTable td {
+  white-space: nowrap;
+}
+
+td:last-child {text-align:center;}
+
+
+input[type=text] {
+  width: 70%;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+
+.betn {
+  appearance: none;
+    -webkit-appearance: none;
+  font-family: sans-serif;
+  cursor: pointer;
+  padding: 12px;
+  min-width: 80px;
+  border: 0px;
+    -webkit-transition: background-color 100ms linear;
+    -ms-transition: background-color 100ms linear;
+     transition: background-color 100ms linear;
+}
+
+.betn:focus, .betn.focus {
+  outline: 0;
+}
+
+
+.betn-round-2 {
+  border-radius: 20px;
+}
+
+.betn-danger {
+  background: #fe6600;
+  color: #ffffff;
+}
+
+.betn-danger:hover {
+  background: #fe6600;
+  color: #ffffff;
+}
+
+.btn-purple{
+  background-color: purple;
+  color: #ffffff;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 36px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 50px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+
+</style>
+<body>
+
+  <nav>
+<a id="resp-menu" class="responsive-menu" href="#"><i class="fa fa-reorder"></i> Menu</a>    
+   <ul class="menu">
+   <li><a class="homer" href="index.html"><i class="fa fa-"></i> Dashboard</a>
+   </li>
+  <li><a  href="#"><i class="fa fa-"></i> Tutors</a>
+  <ul class="sub-menu">
+   <li><a href="listtutor.html">List Tutors</a></li>
+   <li><a href="createacc.html">Create New</a></li>
+   </ul>
+  </li>
+  <li><a  href="#"><i class="fa fa-"></i> Students</a>
+  <ul class="sub-menu">
+   <li><a href="liststudent.html">List Students</a></li>
+   <li><a href="creat.html">Create New</a></li>
+   </ul>
+  </li>
+  <li><a  href="appointment.html"><i class="fa fa-"></i> Appointments</a>
+  </li>
+  <li><a  href="#"><i class="fa fa-"></i> Filters</a>
+  <ul class="sub-menu">
+   <li><a href="grade.html">Grades</a></li>
+   <li><a href="categor.html">Categories</a></li>
+   <li><a href="subject.hrml">Subject</a></li>
+   <li><a href="topic.html">Topics</a></li>
+   </ul>
+  </li>
+  <li><a  href="#"><i class="fa fa-"></i> Classes</a>
+  <ul class="sub-menu">
+   <li><a href="clss.html">Group Classes</a></li>
+   <li><a href="course.html">Cources</a></li>
+   </ul>
+  </li>
+  <li><a  href="#"><i class="fa fa-"></i> Coupons</a>
+  <ul class="sub-menu">
+   <li><a href="coupon.html">List coupons</a></li>
+   <li><a href="cn.html">Create New</a></li>
+   </ul>
+  </li>
+  <li><a  href="#"><i class="fa fa-"></i> Pages</a>
+  <ul class="sub-menu">
+   <li><a href="page.html">List Pages</a></li>
+   <li><a href="cp.html">Create Pages</a></li>
+   </ul>
+  </li>
+  <li><a  href="#"><i class="fa fa-"></i> Payment</a>
+  <ul class="sub-menu">
+   <li><a href="refund.html">Refund Request</a></li>
+   <li><a href="transact.html">Payment Manager</a></li>
+   <li><a href="pay.html">payout Request</a></li>
+   </ul>
+  </li>
+  <li><a  href="earning.html"><i class="fa fa-"></i> Earning Starts</a>
+  </li>
+  <li><a  href="#"><i class="fa fa-"></i> Config</a>
+  <ul class="sub-menu">
+   <li><a href="config.html">Config</a></li>
+   <li><a href="testimonial.html">Testimonal</a></li>
+   </ul>
+  </li>
+  <li><a  href="#"><i class="fa fa-"></i> Language</a>
+  <ul class="sub-menu">
+   <li><a href="Language.html">Languages</a></li>
+   <li><a href="text.html">Text</a></li>
+   </ul>
+  </li>
+  <li><a href="#"><i class="fa fa-"></i> My Profile</a>
+  <ul class="sub-menu">
+   <li><a href="profile.html">My Profile</a></li>
+   <li><a href="">Logout</a></li>
+   </ul>
+  </li>
+  </nav>
+  <br>
+  <br>
+   <div class="container">
+   <h2>System configs</h2>
+  <div class="row">
+    <div class="col-xs-12">
+
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+     <tr>
+              
+              <td>Site name </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            <td><div class="wrap">
+   <div class="search">
+      <input type="text" class="searchTerm" placeholder="Pinlearn - Online tutoring software">
+      <button type="submit" class="searchButton">
+        save
+     </button>
+   </div>
+</div> </td>
+                </tr>
+                     <tr>
+              
+              <td>Site logo </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            <td><div class="wrap">
+   <div class="search">
+      <input type="text" class="searchTerm" placeholder="https://api.pinlearn.info/photos/pinlearn-logo2-9qjvs.png">
+      <button type="submit" class="searchButton">
+        save
+     </button>
+   </div>
+</div> </td>
+                </tr>
+    
+         <tr>
+              
+              <td>Site banner </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            <td><div class="wrap">
+   <div class="search">
+      <input type="text" class="searchTerm" placeholder="https://api.pinlearn.info/photos/livelearn-main-banner-image.png">
+      <button type="submit" class="searchButton">
+        save
+     </button>
+   </div>
+</div> </td>
+                </tr>
+    
+         <tr>
+              
+              <td>Site favicon </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            <td><div class="wrap">
+   <div class="search">
+      <input type="text" class="searchTerm" placeholder="https://api.pinlearn.info/photos/livelearn-main-banner-image.png">
+      <button type="submit" class="searchButton">
+        save
+     </button>
+   </div>
+</div> </td>
+                </tr>
+                   <tr>
+              
+              <td>Contact phone</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            <td><div class="wrap">
+   <div class="search">
+      <input type="text" class="searchTerm" placeholder="123456789">
+      <button type="submit" class="searchButton">
+        save
+     </button>
+   </div>
+</div> </td>
+                </tr>
+    
+      
+    
+    
+  </tbody>
+</table>
+
+   </div>
+  </div>
+</div>
+
+</body>
+
+</html>
