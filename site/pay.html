@@ -250,6 +250,74 @@ select { margin-bottom:15px; }
   color: #ffffff;
 }
 
+input.date{
+  border-radius:10px;
+  height:auto;
+  transition:all ease 400ms;
+  box-shadow:0px 0px 1px 1px Violet;
+}
+
+input.date:hover{
+  box-shadow:0px 0px 5px 5px Violet;
+}
+.quesadilla{
+  position:relative;
+}
+.quesadilla:after{
+  z-index:-1;//this unblock the click
+  content:'📅';//your image or whateaver
+  display: block;
+  font-size:2rem;
+  color:STEELBLUE;
+  background: none;
+  //background: url('') no-repeat;
+  //background-size: 10%;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top:13px;
+  right:-7px;
+}
+
+
+.enchilada::-webkit-calendar-picker-indicator{
+  opacity:0;//removes awful triangle indicator
+}
+.enchilada, .enchilada:focus{
+  background:rgba(0,0,0,0); //"removes" input background because our icon is behind it 😒 *shake fist*
+}
+
+
+input::-webkit-datetime-edit-year-field[enabled]{
+  font-size:5rem;
+}
+
+/*
+>Datetime
+*/
+
+input::-webkit-datetime-edit{
+  background: PALEVIOLETRED;
+  border-radius:10px;
+}
+input::-webkit-datetime-edit-fields-wrapper{
+  //background: AQUAMARINE;
+}
+
+input::-webkit-datetime-edit-ampm-field{}
+input::-webkit-datetime-edit-day-field{}
+input::-webkit-datetime-edit-hour-field{background: AQUAMARINE;}
+input::-webkit-datetime-edit-millisecond-field{background: AQUAMARINE;}
+input::-webkit-datetime-edit-minute-field{background: AQUAMARINE;}
+input::-webkit-datetime-edit-month-field{}
+input::-webkit-datetime-edit-second-field{}
+input::-webkit-datetime-edit-week-field{background: AQUAMARINE;}
+input::-webkit-datetime-edit-year-field{}
+
+input::-webkit-datetime-edit-text{}
+
+
+
 </style>
 <body>
 
@@ -329,92 +397,18 @@ select { margin-bottom:15px; }
   <br>
   <br>
    <div class="container">
-   <h2>Transaction manager</h2>
+   <h2>Request Payout Manager</h2>
+
+  <div class="quesadilla">
+     <input type="date" class='date enchilada'>
+    </div>
   <div class="row">
     <div class="col-xs-12">
 
   <table class="table table-striped">
-  <caption class="text-center">Total Transactio: 11</caption>
-
-  <div class="row">
-  <div class="col">
-    <input type="text" class="form-control" placeholder="First name" aria-label="First name">
-  </div>
-  <div class="col">
-    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
-  </div>
-</div>
-    <thead>
-    <tr>
-    
-    </tr>
-  </thead>
-  <tbody>
-    
-    
-    <tr> 
-      <td>           
-       <input type="text" id="fname" name="firstname" placeholder="search Tutor">
-</td>
-<td>           
-       <input type="text" id="fname" name="firstname" placeholder="search user">
-</td>
-     
-      <td> <input type="text" id="fname" name="firstname" placeholder="All Enroll type">
-</td>
-     
-    </tr>
-
      <thead>
-    <tr>
-    </tr>
-  </thead>
-  <tbody>
-    
-  <tr> 
-      <td>           
-       <input type="text" id="fname" name="firstname" placeholder="Enter Code">
-</td>
-<td></td>
-     
-      <td> <input type="text" id="fname" name="firstname" placeholder="All status">
-</td>
-     
-    </tr>
-  </tbody>
-
-   <thead>
-    <tr>
-    
-    </tr>
-  </thead>
-  <tbody>
-    
-      <tr> 
-        <td></td>
-      <td>           
-                   <button class="betn betn-danger betn-round-2">Filter</button></td>
-
-       <td>
-</td>
-     
-    </tr>
-  </tbody>
-
-</table>
-
-   </div>
-  </div>
-</div>
-
-</body>
-
-  <div class="container">  <div class="row">
-    <div class="col-xs-12">
-
-  <table class="table table-striped">    <thead>
 		<tr>
-      <th>Tutor name</th>
+      <th>code</th>
       <th>User name</th>
       <th>Group Class</th>
       <th>Subject</th>
@@ -578,6 +572,19 @@ select { margin-bottom:15px; }
    </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  $(function() {
+  $('#date').datepicker({
+    dateFormat: 'dd-M-yy',
+    minDate: 1
+  });
+  
+  $('.date-icon').on('click', function() {
+    $('#date').focus();
+  })
+});
+</script>
 
 </body>
 
