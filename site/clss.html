@@ -18,18 +18,10 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css"/>
 </head>
 <style type="text/css">
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Bree+Serif);
 
 
-	@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,700,800);
-
-*,html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,label,fieldset,input,p,blockquote,th,td {
-    margin: 0;
-    padding: 0;
-}
-
-article,aside,figure,footer,header,hgroup,nav,section {
-    display: block;
-}
 
 * {
     -webkit-box-sizing: border-box;
@@ -51,7 +43,8 @@ a:hover {
 }
 
 body {
-    font: 14px "Open Sans",Helvetica,Arial,sans-serif;
+   word-wrap:break-word !important;
+  font-family: 'Open Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
     line-height: 1;
     width: 100%;
@@ -77,12 +70,11 @@ nav {
 }
 
 .menu li a {
-    font-weight: 600;
     text-decoration: none;
     padding: 20px 15px;
     display: block;
     color: #fff;
-    font-size: 15px;
+    font-size: 14px;
     transition: all 0.2s ease-in-out 0s;
 }
 
@@ -171,6 +163,10 @@ nav {
     margin-top: -6px;
 }
 
+li > a:after { content:  ' +'; }
+li > a:only-child:after { content: ''; }
+
+
 .menu li>ul ul:hover {
     visibility: visible;
     opacity: 1;
@@ -251,82 +247,285 @@ select { margin-bottom:15px; }
   color: #ffffff;
 }
 
+.toggle,
+[id^=drop] {
+  display: none;
+}
+
+
+@media all and (max-width : 768px) {
+
+  nav {
+    margin: 0;
+  }
+
+  .toggle + a,
+  .menu {
+    display: none;
+  }
+
+  .toggle {
+    display: block;
+    background-color: #fe6600;
+    padding:14px 20px;  
+    color:#FFF;
+    font-size:17px;
+    text-decoration:none;
+    border:none;
+  }
+
+  .toggle:hover {
+    background-color: #000000;
+  }
+
+  [id^=drop]:checked + ul {
+    display: block;
+  }
+
+  nav ul li {
+    display: block;
+    width: 100%;
+    }
+
+  nav ul ul .toggle,
+  nav ul ul a {
+    padding: 0 40px;
+  }
+
+  nav ul ul ul a {
+    padding: 0 80px;
+  }
+
+  nav a:hover,
+  nav ul ul ul a {
+    background-color: #000000;
+  }
+  
+  nav ul li ul li .toggle,
+  nav ul ul a,
+  nav ul ul ul a{
+    padding:14px 20px;  
+    color:#FFF;
+    font-size:17px; 
+  }
+  
+  
+  nav ul li ul li .toggle,
+  nav ul ul a {
+    background-color: #212121; 
+  }
+
+  nav ul ul {
+    float: none;
+    position:static;
+    color: #ffffff;
+  }
+    
+  nav ul ul li:hover > ul,
+  nav ul li:hover > ul {
+    display: none;
+  }
+    
+  nav ul ul li {
+    display: block;
+    width: 100%;
+  }
+
+  nav ul ul ul li {
+    position: static;
+  }
+
+}
+
+@media all and (max-width : 330px) {
+
+  nav ul li {
+    display:block;
+    width: 94%;
+  }
+
+}
+
+
 </style>
 <body>
 
-  <nav>
-<a id="resp-menu" class="responsive-menu" href="#"><i class="fa fa-reorder"></i> Menu</a>    
-   <ul class="menu">
-   <li><a class="homer" href="index.html"><i class="fa fa-"></i> Dashboard</a>
-   </li>
-  <li><a  href="#"><i class="fa fa-"></i> Tutors</a>
-  <ul class="sub-menu">
-   <li><a href="listtutor.html">List Tutors</a></li>
-   <li><a href="createacc.html">Create New</a></li>
-   </ul>
-  </li>
-  <li><a  href="#"><i class="fa fa-"></i> Students</a>
-  <ul class="sub-menu">
-   <li><a href="liststudent.html">List Students</a></li>
-   <li><a href="creat.html">Create New</a></li>
-   </ul>
-  </li>
-  <li><a  href="appointment.html"><i class="fa fa-"></i> Appointments</a>
-  </li>
-  <li><a  href="#"><i class="fa fa-"></i> Filters</a>
-  <ul class="sub-menu">
-   <li><a href="grade.html">Grades</a></li>
-   <li><a href="categor.html">Categories</a></li>
-   <li><a href="subject.hrml">Subject</a></li>
-   <li><a href="topic.html">Topics</a></li>
-   </ul>
-  </li>
-  <li><a  href="#"><i class="fa fa-"></i> Classes</a>
-  <ul class="sub-menu">
-   <li><a href="clss.html">Group Classes</a></li>
-   <li><a href="course.html">Cources</a></li>
-   </ul>
-  </li>
-  <li><a  href="#"><i class="fa fa-"></i> Coupons</a>
-  <ul class="sub-menu">
-   <li><a href="coupon.html">List coupons</a></li>
-   <li><a href="cn.html">Create New</a></li>
-   </ul>
-  </li>
-  <li><a  href="#"><i class="fa fa-"></i> Pages</a>
-  <ul class="sub-menu">
-   <li><a href="page.html">List Pages</a></li>
-   <li><a href="cp.html">Create Pages</a></li>
-   </ul>
-  </li>
-  <li><a  href="#"><i class="fa fa-"></i> Payment</a>
-  <ul class="sub-menu">
-   <li><a href="refund.html">Refund Request</a></li>
-   <li><a href="transact.html">Payment Manager</a></li>
-   <li><a href="pay.html">payout Request</a></li>
-   </ul>
-  </li>
-  <li><a  href="earning.html"><i class="fa fa-"></i> Earning Starts</a>
-  </li>
-  <li><a  href="#"><i class="fa fa-"></i> Config</a>
-  <ul class="sub-menu">
-   <li><a href="config.html">Config</a></li>
-   <li><a href="testimonial.html">Testimonal</a></li>
-   </ul>
-  </li>
-  <li><a  href="#"><i class="fa fa-"></i> Language</a>
-  <ul class="sub-menu">
-   <li><a href="Language.html">Languages</a></li>
-   <li><a href="text.html">Text</a></li>
-   </ul>
-  </li>
-  <li><a href="#"><i class="fa fa-"></i> My Profile</a>
-  <ul class="sub-menu">
-   <li><a href="profile.html">My Profile</a></li>
-   <li><a href="">Logout</a></li>
-   </ul>
-  </li>
-  </nav>
+   <nav>
+        <label for="drop" class="toggle">Menu</label>
+        <input type="checkbox" id="drop" />
+            <ul class="menu">
+                <li><a href="index.html">Dashboard</a></li>
+                <li>
+                    <label for="drop-1" class="toggle">Tutor+</label>
+                    <a href="#">Tutor</a>
+                    <input type="checkbox" id="drop-1"/>
+                    <ul>
+                        <li><a href="listtutor.html">List Tutors</a></li>
+                        <li><a href="createacc.html">Create New</a></li>
+                    </ul> 
+
+                </li>
+                <li>
+
+                <label for="drop-2" class="toggle">Student+</label>
+                <a href="#">Student</a>
+                <input type="checkbox" id="drop-2"/>
+                <ul>
+                   <li><a href="liststudent.html">List Students</a></li>
+                   <li><a href="creat.html">Create New</a></li>
+                </ul>
+                </li>
+                  <li><a  href="appointment.html"><i class="fa fa-"></i> Appointments</a>
+
+                              <li>
+
+                <label for="drop-2" class="toggle">Filters+</label>
+                <a href="#">Filters</a>
+                <input type="checkbox" id="drop-2"/>
+                <ul>
+                     <li>
+                       
+               
+                    <label for="drop-3" class="toggle">Grades +</label>
+                    <a href="#">Grades</a>         
+                    <input type="checkbox" id="drop-3"/>
+
+                    <ul>
+                        <li><a href="grade.html">List Grades</a></li>
+                        <li><a href="">Create New</a></li>
+                                            </ul>
+                    </li>
+                    <li>   
+               
+                    <label for="drop-3" class="toggle">Categories+</label>
+                    <a href="#">Categories</a>         
+                    <input type="checkbox" id="drop-3"/>
+
+                    <ul>
+                         <li><a href="categor.html">List Categories</a></li>
+                        <li><a href="">Create New</a></li>
+                    </ul>
+                    </li>
+                     <li>   
+               
+                    <label for="drop-3" class="toggle">Subject +</label>
+                    <a href="#">Subject</a>         
+                    <input type="checkbox" id="drop-3"/>
+
+                    <ul>
+                         <li><a href="subject.hrml">List Subject</a></li>
+                        <li><a href="">Create New</a></li>
+                    </ul>
+                    </li>
+                     <li>   
+               
+                    <label for="drop-3" class="toggle"> Topics+</label>
+                    <a href="#">Topics</a>         
+                    <input type="checkbox" id="drop-3"/>
+
+                    <ul>
+                         <li><a href="topic.html">List Topics</a></li>
+                        <li><a href="">Create New</a></li>
+                    </ul>
+                    </li>
+                </ul>
+                </li>                <li>
+
+                <label for="drop-2" class="toggle">Classes+</label>
+                <a href="#">classes</a>
+                <input type="checkbox" id="drop-2"/>
+                <ul>
+                     <li>
+                       
+               
+                    <label for="drop-3" class="toggle">Group Classes +</label>
+                    <a href="#">Group Classes</a>         
+                    <input type="checkbox" id="drop-3"/>
+
+                    <ul>
+                        <li><a href="clss.html">List Group Classes</a></li>
+                        <li><a href="">Create New</a></li>
+                                            </ul>
+                    </li>
+                    <li>   
+               
+                    <label for="drop-3" class="toggle">Cources +</label>
+                    <a href="#">Cources</a>         
+                    <input type="checkbox" id="drop-3"/>
+
+                    <ul>
+                       <li><a href="course.html">List cources</a></li>
+                        <li><a href="">Create New</a></li>
+                    </ul>
+                    </li>
+                </ul>
+                </li>
+                 <li>
+                    <label for="drop-1" class="toggle">Coupons+</label>
+                    <a href="#">Coupons</a>
+                    <input type="checkbox" id="drop-1"/>
+                    <ul>
+                        <li><a href="coupon.html">List coupons</a></li>
+                        <li><a href="cn.html">Create New</a></li>
+                    </ul> 
+
+                </li>
+                <li>
+
+                <label for="drop-2" class="toggle">Pages+</label>
+                <a href="#">Pages</a>
+                <input type="checkbox" id="drop-2"/>
+                <ul>
+                     <li><a href="page.html">List Pages</a></li>
+                     <li><a href="cp.html">Create Pages</a></li>
+                </ul>
+                </li>
+                  <li>
+
+                <label for="drop-2" class="toggle">Payments+</label>
+                <a href="#">payments</a>
+                <input type="checkbox" id="drop-2"/>
+                <ul>
+                   <li><a href="refund.html">Refund Request</a></li>
+                   <li><a href="transact.html">Payment Manager</a></li>
+                   <li><a href="pay.html">payout Request</a></li>
+                </ul>
+                </li>
+                <li><a href="#">Earning Starts</a></li>
+                 <li>
+                    <label for="drop-1" class="toggle">Config+</label>
+                    <a href="#">Config</a>
+                    <input type="checkbox" id="drop-1"/>
+                    <ul>
+                       <li><a href="config.html">Config</a></li>
+                       <li><a href="testimonial.html">Testimonal</a></li>
+                    </ul> 
+
+                </li>
+                <li>
+
+                <label for="drop-2" class="toggle">Language+</label>
+                <a href="#">Language</a>
+                <input type="checkbox" id="drop-2"/>
+                <ul>
+                    <li><a href="Language.html">Languages</a></li>
+                    <li><a href="text.html">Text</a></li>
+                    <li>
+      
+                </ul>
+                </li>
+               <li>
+                    <label for="drop-1" class="toggle">My Profile+</label>
+                    <a href="#">My Profile</a>
+                    <input type="checkbox" id="drop-1"/>
+                    <ul>
+                        <li><a href="profile.html">My Profile</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul> 
+
+                </li>
+            </ul>
+        </nav>
   <br>
   <br>
 
