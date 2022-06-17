@@ -9,9 +9,6 @@
 
 </head>
 <style type="text/css">
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-@import url(https://fonts.googleapis.com/css?family=Bree+Serif);
-
 
 
 *,
@@ -61,6 +58,7 @@ nav {
 
 .menu {
     display: block;
+    
 }
 
 .menu li {
@@ -192,7 +190,6 @@ li > a:only-child:after { content: ''; }
     color: #fe6600;
     text-decoration: none;
 }
-
 
 [tabindex='-1']:focus {
   outline: 0 !important;
@@ -1914,11 +1911,8 @@ p {
 }
 
 
-  
 </style>
-
 <body>
-
 
  <nav>
         <label for="drop" class="toggle">Menu</label>
@@ -2100,8 +2094,7 @@ p {
       <span class="mask bg-gradient-default opacity-8">
         <div class="row">
           <div class="col-lg-7 col-md-10">
-            <p style="padding-top: 48px; padding-left: 35px; font-size: 25px" class="text-white">Create New Coupon</p>
-</div>
+          </div>
         </div>
           </div>
     </div>
@@ -2124,69 +2117,48 @@ p {
                   <div class="row">
                     <div class="col-lg-6">
                       <div class="form-group focused">
+                        <label class="form-control-label" for="input-username">Tutor</label>
+                        <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="search Tutor">
+                      </div>
+                    </div>
+                  </div>
+
+                   <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group focused">
                         <label class="form-control-label" for="input-username">Name</label>
                         <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="Enter name">
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
-                        <label class="form-control-label" for="input-email">Code</label>
-                        <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="Enter code">
+                        <label class="form-control-label" for="input-email">Maximum strength (*)</label>
+                        <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="1">
                       </div>
                     </div>
                   </div>
-                  <div class="row">
+                   <div class="row">
                     <div class="col-lg-6">
                       <div class="form-group focused">
-                        <label class="form-control-label" for="input-first-name">Discount type</label>
-                        <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="" value="Percent%">
-
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="form-group focused">
-                        <label class="form-control-label" for="input-last-name">Target type</label>
-                        <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="" value="none">
-                      </div>
-                    </div>
-                  </div>
-                      <div class="row">
-                    <div class="col-lg-6">
-                      <div class="form-group focused">
-                        <label class="form-control-label" for="input-username">Discount value</label>
+                        <label class="form-control-label" for="input-username">Price</label>
                         <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="0">
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
-                        <label class="form-control-label" for="input-email">Limit number of use</label>
-                        <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="0">
+                        <label class="form-control-label" for="input-email">Grades</label>
+                        <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="Choose Grade">
                       </div>
                     </div>
                   </div>
-                    <div class="row">
-                    <div class="col-lg-6">
-                      <div class="form-group focused">
-                        <label class="form-control-label" for="input-first-name">Start date</label>
-                        <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="" value="dd-mm-yyyy">
 
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="form-group focused">
-                        <label class="form-control-label" for="input-last-name">Expired date</label>
-                        <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="" value="dd-mm-yyyy">
-                      </div>
-                    </div>
+                   <hr class="my-4">
+                <div class="pl-lg-4">
+                  <div class="form-group focused">
+                    <label>Description</label>
+                    <textarea rows="4" class="form-control form-control-alternative" placeholder="Enter Text"></textarea>
                   </div>
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="form-group">
-                       <label for="setC_male">
-                         Active? <input id="setC" type="checkbox"></label>
-                      </div>
-                    </div>
-                  </div>
+                </div>
               
                 <div class="col-4">
                   <a href="#!" class="btn btn-sm btn-primary">Submit</a>
